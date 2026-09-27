@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse — The Rhythm of Progress</title>
+<meta name="description" content="Pulse is a fitness planning and progress-tracking web app. Set a goal, log workouts, and see your progress over time.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Pulse" class="nav-logo-img"></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#coaches">Coaches</a></li>
+      <li><a href="index.html#gallery">Library</a></li>
+    </ul>
+    <div class="nav-user">
+      <span class="nav-username"></span>
+      <a href="index.html#auth" class="btn-nav-signin">Sign In</a>
+      <button type="button" class="btn-nav-logout">Log Out</button>
+    </div>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main>
+<header class="hero" id="top">
+    <div class="hero-bg">
+      <img src="assets/hero-bg.png" alt="" role="presentation">
+    </div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-title" role="img" aria-label="PULSE"></div>
+        <p class="hero-tagline">The <strong>rhythm</strong> of progress.</p>
+        <p class="hero-sub">Fitness Progress Tracker</p>
+      </div>
+      <div class="hero-bottom-row">
+        <div class="hero-bottom-left">
+          <div class="hero-eyebrow-small"><span class="bar"></span> <span>Track progress.<br>Stay consistent.</span></div>
+          <div class="hero-cta-row">
+            <a href="index.html#auth" class="btn btn-primary btn-lg" id="hero-cta-primary">Start Your Journey &#8594;</a>
+            <a href="index.html#about" class="btn btn-secondary btn-lg">See how it works</a>
+          </div>
+        </div>
+        <div class="hero-meta">
+          Built for consistency.<br>Designed to perform.
+        </div>
+      </div>
+    </div>
+  </header>
+<section class="section" id="about">
+    <div class="about-grid">
+      <div class="about-copy">
+        <div class="section-eyebrow">About Pulse</div>
+        <h2 class="section-title">Built for real progress</h2>
+        <p class="about-lead">
+          Pulse helps you plan a fitness direction based on your own goals, record every workout
+          and measurement, and see your progress laid out clearly over time — so consistency is
+          something you can actually see, not just feel.
+        </p>
+        <div class="about-points">
+          <div class="about-point"><span class="pulse-icon point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><span>A personalized training direction based on your goal, experience, and equipment</span></div>
+          <div class="about-point"><span class="pulse-icon point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.5 6.5v11M17.5 6.5v11M2 9v6M22 9v6M4 12h16"/></svg></span><span>Simple workout logging with dates, duration, sets, and notes</span></div>
+          <div class="about-point"><span class="pulse-icon point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></span><span>Visual charts and summaries that turn your history into progress</span></div>
+        </div>
+      </div>
+      <div class="about-visual card">
+        <div class="about-visual-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8.5c0 5-8 10.5-8 10.5S4 13.5 4 8.5A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 8 2.5Z"/></svg></div>
+        <div class="about-visual-tag">
+          <div class="tag-label">Mission</div>
+          <div class="tag-value">Consistency over intensity</div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section class="section features-section" id="features">
+    <div class="section-head">
+      <div class="section-eyebrow">Why Pulse</div>
+      <h2 class="section-title">Every tool you need, refined</h2>
+      <p class="section-lead">Four essentials that turn effort into evidence, without the clutter of a hundred half-used features.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="card feature-card">
+        <div class="feature-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></div>
+        <h3>Visual Progress Tracking</h3>
+        <p>Compare workout history, weight, and photos in one clear, evolving view.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+        <h3>Personalized Direction</h3>
+        <p>A training direction built from your goal, experience, equipment, and available days — not a generic template.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.5 6.5v11M17.5 6.5v11M2 9v6M22 9v6M4 12h16"/></svg></div>
+        <h3>Workout Logging</h3>
+        <p>Log sessions in seconds and browse a small library of workout ideas by category.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0"/><path d="M3 12h18M12 12V5M9 5c0-1.5 1.5-2 3-2s3 .5 3 2"/></svg></div>
+        <h3>Goal &amp; Nutrition Estimates</h3>
+        <p>Weekly workout goals plus general, transparent nutrition estimates — clearly labeled, never prescriptive.</p>
+      </div>
+    </div>
+  </section>
+<section class="section" id="coaches">
+    <div class="section-head">
+      <div class="section-eyebrow">Sample Profiles</div>
+      <h2 class="section-title">The people behind Pulse</h2>
+      <p class="section-lead">These are illustrative team profiles for this student project — Pulse does not currently offer booking or messaging with coaches.</p>
+    </div>
+    <div class="coach-grid">
+      <div class="card coach-card">
+        <div class="coach-portrait">AY</div>
+        <h3 class="coach-name">Aayush Yadav</h3>
+        <div class="coach-role">Founder &amp; Project Lead</div>
+        <p class="coach-bio">Focused on building a tracker around real numbers instead of guesswork.</p>
+        <div class="coach-meta"><span>Sample Profile</span></div>
+      </div>
+      <div class="card coach-card">
+        <div class="coach-portrait">RT</div>
+        <h3 class="coach-name">Ranish Thapa</h3>
+        <div class="coach-role">Cardio &amp; HIIT (sample)</div>
+        <p class="coach-bio">Represents the cardio/HIIT focus area used in the plan-generation logic.</p>
+        <div class="coach-meta"><span>Sample Profile</span></div>
+      </div>
+      <div class="card coach-card">
+        <div class="coach-portrait">UB</div>
+        <h3 class="coach-name">Utsav Bista</h3>
+        <div class="coach-role">Mobility &amp; Nutrition (sample)</div>
+        <p class="coach-bio">Represents the mobility and nutrition-estimate features of the app.</p>
+        <div class="coach-meta"><span>Sample Profile</span></div>
+      </div>
+    </div>
+    <p class="coach-note"></p>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="section-head">
+      <div class="section-eyebrow">Workout Library</div>
+      <h2 class="section-title">A quick look at what you can log</h2>
+      <p class="section-lead">A small rotating preview of the workout categories available on the Workout page.</p>
+    </div>
+    <div class="gallery-slider" role="region" aria-roledescription="carousel" aria-label="Workoutcategory preview">
+      <div class="gallery-track" id="gallery-track">
+        <div class="gallery-slide active tone-1" aria-hidden="false">
+          <div class="slide-tag">Strength</div>
+          <h3>Build raw power</h3>
+          <p>Compound lifts and progressive sets for muscle and strength goals.</p>
+        </div>
+        <div class="gallery-slide tone-2" aria-hidden="true">
+          <div class="slide-tag">Cardio</div>
+          <h3>Move your heart</h3>
+          <p>Running, cycling, and steady-state work for endurance and weight-loss goals.</p>
+        </div>
+        <div class="gallery-slide tone-3" aria-hidden="true">
+          <div class="slide-tag">HIIT</div>
+          <h3>Short, intense bursts</h3>
+          <p>High-intensity intervals for efficient, time-conscious sessions.</p>
+        </div>
+        <div class="gallery-slide tone-4" aria-hidden="true">
+          <div class="slide-tag">Yoga &amp; Mobility</div>
+          <h3>Recover and stretch</h3>
+          <p>Flexibility and recovery-focused sessions to round out any plan.</p>
+        </div>
+      </div>
+      <button type="button" class="gallery-nav prev" aria-label="Previous slide">&#8249;</button>
+      <button type="button" class="gallery-nav next" aria-label="Next slide">&#8250;</button>
+    </div>
+    <div class="gallery-dots" id="gallery-dots" role="tablist" aria-label="Slide selector"></div>
+  </section>
+<section class="auth-section" id="auth">
+    <div class="auth-wrap">
+      <div class="section-head" style="margin-bottom:28px;">
+        <div class="section-eyebrow">Get Started</div>
+        <h2 class="section-title" style="font-size:clamp(1.8rem,4vw,2.6rem);">Start Your Journey</h2>
+      </div>
+      <div class="card auth-card">
+        <div class="auth-tabs" role="tablist">
+          <span class="auth-tab-highlight" aria-hidden="true"></span>
+          <button type="button" class="auth-tab active" id="tab-signin" role="tab" aria-selected="true" aria-controls="panel-signin">Sign In</button>
+          <button type="button" class="auth-tab" id="tab-register" role="tab" aria-selected="false" aria-controls="panel-register">Create Account</button>
+        </div>
+
+        <div class="auth-panel active" id="panel-signin" role="tabpanel" aria-labelledby="tab-signin">
+          <div>
+            <div class="auth-panel-eyebrow">Returning</div>
+            <h3>Sign In</h3>
+            <p class="auth-panel-sub">Pick up right where you left off.</p>
+          </div>
+          <div id="signin-msg" class="auth-msg" role="alert"></div>
+          <form id="signin-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="signin-email">Email</label>
+              <input class="form-input" type="email" id="signin-email" name="email" autocomplete="email" required>
+              <div class="field-error" id="signin-email-error"></div>
+            </div>
+            <div class="form-group mt-16">
+              <label class="form-label" for="signin-password">Password</label>
+              <input class="form-input" type="password" id="signin-password" name="password" autocomplete="current-password" required>
+              <div class="field-error" id="signin-password-error"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg mt-16" style="width:100%;">Sign In &#8594;</button>
+          </form>
+        </div>
+
+        <div class="auth-panel" id="panel-register" role="tabpanel" aria-labelledby="tab-register">
+          <div>
+            <div class="auth-panel-eyebrow">New Here</div>
+            <h3>Create Account</h3>
+            <p class="auth-panel-sub">This is a student-project demo account, stored only in your browser.</p>
+          </div>
+          <div id="register-msg" class="auth-msg" role="alert"></div>
+          <form id="register-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="register-name">Name</label>
+              <input class="form-input" type="text" id="register-name" name="name" autocomplete="name" required>
+              <div class="field-error" id="register-name-error"></div>
+            </div>
+            <div class="form-group mt-16">
+              <label class="form-label" for="register-email">Email</label>
+              <input class="form-input" type="email" id="register-email" name="email" autocomplete="email" required>
+              <div class="field-error" id="register-email-error"></div>
+            </div>
+            <div class="form-group mt-16">
+              <label class="form-label" for="register-password">Password</label>
+              <input class="form-input" type="password" id="register-password" name="password" autocomplete="new-password" minlength="6" required>
+              <div class="field-error" id="register-password-error"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg mt-16" style="width:100%;">Create Account &#8594;</button>
+          </form>
+        </div>
+      </div>
+      <p class="nutri-disclaimer" style="text-align:center;margin-top:18px;">
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><img src="logo.png" alt="Pulse" class="nav-logo-img"></a>
+      <p>The rhythm of progress.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Workouts</h4>
+        <a href="workout.html">Workout Library</a>
+        <a href="workout.html">Log a Workout</a>
+        <a href="progress.html">My Progress</a>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="index.html#about">Our Mission</a>
+        <a href="index.html#coaches">Sample Profiles</a>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <a href="index.html#auth">Sign In</a>
+        <a href="index.html#auth">Create Account</a>
+        <a href="profile.html">Dashboard</a>
+      </div>
+    </div>
+    <div class="footer-social" aria-hidden="true">
+      <a href="#" tabindex="-1">IG</a>
+      <a href="#" tabindex="-1">X</a>
+      <a href="#" tabindex="-1">YT</a>
+    </div>
+  </div>
+  <div class="footer-wordmark" aria-hidden="true">PULSE</div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Pulse. Built by students — a college project, not a commercial product.</span>
+    <span><a href="#top">Back to top</a></span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => { initAuthForms(); });
+</script>
+<script src="index.js"></script>
+</body>
+</html>

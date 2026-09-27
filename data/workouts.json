@@ -1,0 +1,74 @@
+[
+  {
+    "category": "Strength",
+    "name": "Full-Body Compound Set",
+    "description": "Squats, push-ups, and rows performed back to back for overall strength.",
+    "difficulty": "Beginner"
+  },
+  {
+    "category": "Strength",
+    "name": "Upper/Lower Split",
+    "description": "Alternate upper-body pressing and pulling with lower-body compound lifts.",
+    "difficulty": "Intermediate"
+  },
+  {
+    "category": "Strength",
+    "name": "Progressive Overload Block",
+    "description": "Heavier compound lifts with planned weekly load increases.",
+    "difficulty": "Advanced"
+  },
+  {
+    "category": "Cardio",
+    "name": "Steady-State Walk/Jog",
+    "description": "Continuous moderate-pace cardio for endurance and recovery.",
+    "difficulty": "Beginner"
+  },
+  {
+    "category": "Cardio",
+    "name": "Interval Cycling",
+    "description": "Alternating fast and easy cycling intervals to build endurance.",
+    "difficulty": "Intermediate"
+  },
+  {
+    "category": "HIIT",
+    "name": "Bodyweight HIIT Circuit",
+    "description": "Short, high-intensity bodyweight intervals with brief rest periods.",
+    "difficulty": "Intermediate"
+  },
+  {
+    "category": "HIIT",
+    "name": "Tabata Burner",
+    "description": "20 seconds on, 10 seconds off, repeated across a small set of exercises.",
+    "difficulty": "Advanced"
+  },
+  {
+    "category": "Yoga",
+    "name": "Morning Mobility Flow",
+    "description": "Gentle stretching and mobility sequence to start the day.",
+    "difficulty": "Beginner"
+  },
+  {
+    "category": "Yoga",
+    "name": "Recovery & Flexibility Flow",
+    "description": "Slow-paced stretching session focused on recovery after hard training days.",
+    "difficulty": "Beginner"
+  },
+  {
+    "category": "Core",
+    "name": "Core Stability Circuit",
+    "description": "Planks, dead bugs, and rotational holds for core control.",
+    "difficulty": "Beginner"
+  },
+  {
+    "category": "Functional",
+    "name": "Functional Movement Circuit",
+    "description": "Carries, lunges, and hinge patterns that mirror everyday movement.",
+    "difficulty": "Intermediate"
+  },
+  {
+    "category": "Cycling",
+    "name": "Endurance Ride",
+    "description": "Longer, lower-intensity ride focused on aerobic base building.",
+    "difficulty": "Intermediate"
+  }
+]

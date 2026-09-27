@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progress — Pulse</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Pulse" class="nav-logo-img"></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="profile.html">Dashboard</a></li>
+      <li><a href="workout.html">Workouts</a></li>
+      <li><a href="progress.html">Progress</a></li>
+    </ul>
+    <div class="nav-user">
+      <span class="nav-username"></span>
+      <a href="index.html#auth" class="btn-nav-signin">Sign In</a>
+      <button type="button" class="btn-nav-logout">Log Out</button>
+    </div>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+  <div class="pg-hero">
+    <div class="section-eyebrow">Progress Analytics</div>
+    <h1 class="pg-title">Your progress, visualized</h1>
+    <p class="pg-subline">Workout trends, measurements, and photo comparisons in one place.</p>
+  </div>
+
+  <div class="pg-wrap">
+<div class="card">
+      <div class="pg-chart-head">
+        <h2 class="card-title" style="margin-bottom:0;">Workout Duration Over Time</h2>
+        <select class="form-select pg-filter-select" id="pg-filter">
+          <option value="week">This Week</option>
+          <option value="month">This Month</option>
+          <option value="all" selected>All Time</option>
+        </select>
+      </div>
+
+      <div class="pg-mini-stats">
+        <div class="pg-mini-stat"><div class="pg-mini-value" id="pg-total-workouts">0</div><div class="pg-mini-label">Workouts</div></div>
+        <div class="pg-mini-stat"><div class="pg-mini-value" id="pg-total-minutes">0</div><div class="pg-mini-label">Total Minutes</div></div>
+        <div class="pg-mini-stat"><div class="pg-mini-value" id="pg-avg-duration">0</div><div class="pg-mini-label">Avg Duration</div></div>
+        <div class="pg-mini-stat"><div class="pg-mini-value" id="pg-best-duration">0</div><div class="pg-mini-label">Best Duration</div></div>
+      </div>
+
+      <div class="pg-chart-wrap">
+        <canvas id="duration-chart" role="img" aria-label="Bar chart of workout duration in minutes by date"></canvas>
+      </div>
+      <div id="chart-empty" class="empty-state hidden">
+        <span class="pulse-icon empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h8"/></svg></span>
+        <p>No workouts for this time range yet. Log a workout to see it appear here.</p>
+      </div>
+
+      <h3 class="card-title mt-24" style="font-size:0.95rem;">Data Table</h3>
+      <div id="chart-table" style="overflow-x:auto;"></div>
+    </div>
+<div class="card">
+      <h2 class="card-title">Weekly Workout Goal</h2>
+      <div class="pg-bar-row">
+        <span class="label">Progress</span>
+        <span class="value" id="pg-goal-value">0 / 4 (0%)</span>
+      </div>
+      <div class="pg-bar-track">
+        <div class="pg-bar-fill" id="pg-goal-bar" style="width:0%;"></div>
+      </div>
+    </div>
+<div class="card">
+      <h2 class="card-title">Measurements</h2>
+      <form id="measurement-form" class="wk-form-grid" style="grid-template-columns:1fr 1fr 2fr auto;align-items:end;" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="ms-date">Date</label>
+          <input class="form-input" type="date" id="ms-date" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="ms-weight">Weight (kg)</label>
+          <input class="form-input" type="number" step="0.1" id="ms-weight" min="30" max="300" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="ms-notes">Notes <span class="wk-optional-tag">(optional)</span></label>
+          <input class="form-input" type="text" id="ms-notes" maxlength="200">
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </form>
+      <div id="ms-error" class="field-error mt-8"></div>
+
+      <div class="dash-cols mt-24" style="grid-template-columns:1fr 1fr;">
+        <div>
+          <h3 class="card-title" style="font-size:0.95rem;">Weight Trend</h3>
+          <div class="pg-chart-wrap" style="height:220px;">
+            <canvas id="weight-chart" role="img" aria-label="Line chart of recorded weight over time"></canvas>
+          </div>
+          <div id="weight-chart-empty" class="empty-state hidden">
+            <span class="pulse-icon empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h8"/></svg></span>
+            <p>Add at least two measurements to see a weight trend.</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="card-title" style="font-size:0.95rem;">BMI</h3>
+          <div id="bmi-body"></div>
+        </div>
+      </div>
+    </div>
+<div class="card">
+      <h2 class="card-title">Gallery</h2>
+      <p class="text-muted" style="margin-bottom:18px;font-size:0.85rem;">
+        A visual look at the training styles Pulse supports.
+      </p>
+      <div class="fit-gallery-grid">
+        <div class="fit-gallery-card tone-strength">
+          <div class="fit-gallery-overlay">
+            <span class="pulse-icon fit-gallery-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.5 6.5v11M17.5 6.5v11M2 9v6M22 9v6M4 12h16"/></svg></span>
+            <div class="fit-gallery-label">Strength</div>
+            <div class="fit-gallery-caption">Compound lifts &amp; progressive overload</div>
+          </div>
+        </div>
+        <div class="fit-gallery-card tone-cardio">
+          <div class="fit-gallery-overlay">
+            <span class="pulse-icon fit-gallery-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8.5c0 5-8 10.5-8 10.5S4 13.5 4 8.5A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 8 2.5Z"/></svg></span>
+            <div class="fit-gallery-label">Cardio</div>
+            <div class="fit-gallery-caption">Steady-state runs &amp; endurance work</div>
+          </div>
+        </div>
+        <div class="fit-gallery-card tone-hiit">
+          <div class="fit-gallery-overlay">
+            <span class="pulse-icon fit-gallery-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s-6 6.5-6 11a6 6 0 0 0 12 0c0-2-1-3.5-2-4.5.3 1.5-.5 2.5-1.3 2.2C15.6 10 15 8 12 2Z"/></svg></span>
+            <div class="fit-gallery-label">HIIT</div>
+            <div class="fit-gallery-caption">High-intensity interval circuits</div>
+          </div>
+        </div>
+        <div class="fit-gallery-card tone-yoga">
+          <div class="fit-gallery-overlay">
+            <span class="pulse-icon fit-gallery-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 12a3 3 0 1 0 0 6 5 5 0 0 0 5-5 5 5 0 0 1 5-5 3 3 0 1 1 0 6"/></svg></span>
+            <div class="fit-gallery-label">Yoga &amp; Mobility</div>
+            <div class="fit-gallery-caption">Flexibility &amp; active recovery</div>
+          </div>
+        </div>
+        <div class="fit-gallery-card tone-core">
+          <div class="fit-gallery-overlay">
+            <span class="pulse-icon fit-gallery-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M12 5v2M12 17v2M5 12h2M17 12h2"/></svg></span>
+            <div class="fit-gallery-label">Core</div>
+            <div class="fit-gallery-caption">Stability &amp; rotational strength</div>
+          </div>
+        </div>
+        <div class="fit-gallery-card tone-recovery">
+          <div class="fit-gallery-overlay">
+            <span class="pulse-icon fit-gallery-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg></span>
+            <div class="fit-gallery-label">Recovery</div>
+            <div class="fit-gallery-caption">Stretching &amp; rest-day care</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>
